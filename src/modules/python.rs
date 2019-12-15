@@ -18,13 +18,13 @@ pub fn module<'a>(context: &'a Context) -> Option<Module<'a>> {
     let is_py_project = context
         .try_begin_scan()?
         .set_files(&[
-            "requirements.txt",
+            // "requirements.txt",
             ".python-version",
             "pyproject.toml",
             "Pipfile",
             "tox.ini",
         ])
-        .set_extensions(&["py"])
+        // .set_extensions(&["py"])
         .is_match();
 
     let is_venv = env::var("VIRTUAL_ENV").ok().is_some();

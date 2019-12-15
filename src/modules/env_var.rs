@@ -15,7 +15,7 @@ pub fn module<'a>(context: &'a Context) -> Option<Module<'a>> {
     let mut module = context.new_module("env_var");
     let config: EnvVarConfig = EnvVarConfig::try_load(module.config);
 
-    let env_value = get_env_value(config.variable?, config.default)?;
+    let _env_value = get_env_value(config.variable?, config.default)?;
 
     module.set_style(config.style);
     module.get_prefix().set_value("with ");
@@ -25,7 +25,7 @@ pub fn module<'a>(context: &'a Context) -> Option<Module<'a>> {
     }
 
     // TODO: Use native prefix and suffix instead of stacking custom ones together with env_value.
-    let env_var_stacked = format!("{}{}{}", config.prefix, env_value, config.suffix);
+    let env_var_stacked = format!("{}{}", config.prefix, config.suffix);
     module.create_segment("env_var", &SegmentConfig::new(&env_var_stacked));
 
     Some(module)

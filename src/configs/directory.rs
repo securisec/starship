@@ -21,7 +21,7 @@ impl<'a> RootModuleConfig<'a> for DirectoryConfig<'a> {
             truncate_to_repo: true,
             fish_style_pwd_dir_length: 0,
             use_logical_path: true,
-            prefix: "in ",
+            prefix: "",
             style: Color::Cyan.bold(),
             disabled: false,
         }
