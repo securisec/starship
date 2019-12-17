@@ -5,6 +5,7 @@ use crate::utils;
 
 /// Creates a module with the current Node.js version
 ///
+///
 /// Will display the Node.js version if any of the following criteria are met:
 ///     - Current directory contains a `.js` file
 ///     - Current directory contains a `package.json` file

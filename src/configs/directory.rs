@@ -13,7 +13,7 @@ pub struct DirectoryConfig<'a> {
     pub style: Style,
     pub disabled: bool,
 }
-
+///
 impl<'a> RootModuleConfig<'a> for DirectoryConfig<'a> {
     fn new() -> Self {
         DirectoryConfig {

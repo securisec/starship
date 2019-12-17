@@ -7,6 +7,7 @@ use crate::utils;
 
 /// Creates a module with the current Python version
 ///
+///
 /// Will display the Python version if any of the following criteria are met:
 ///     - Current directory contains a `.python-version` file
 ///     - Current directory contains a `requirements.txt` file
