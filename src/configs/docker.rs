@@ -4,20 +4,18 @@ use ansi_term::{Color, Style};
 use starship_module_config_derive::ModuleConfig;
 
 #[derive(Clone, ModuleConfig)]
-pub struct NodejsConfig<'a> {
+pub struct DockerConfig<'a> {
     pub symbol: SegmentConfig<'a>,
     pub style: Style,
     pub disabled: bool,
-    pub node_show_version: bool,
 }
 
-impl<'a> RootModuleConfig<'a> for NodejsConfig<'a> {
+impl<'a> RootModuleConfig<'a> for DockerConfig<'a> {
     fn new() -> Self {
-        NodejsConfig {
-            symbol: SegmentConfig::new("⬢ "),
-            style: Color::Green.bold(),
+        DockerConfig {
+            symbol: SegmentConfig::new("🐳 "),
+            style: Color::Blue.bold(),
             disabled: false,
-            node_show_version: false,
         }
     }
 }

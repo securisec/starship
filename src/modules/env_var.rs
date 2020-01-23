@@ -19,7 +19,7 @@ pub fn module<'a>(context: &'a Context) -> Option<Module<'a>> {
     let _env_value = get_env_value(config.variable?, config.default)?;
 
     module.set_style(config.style);
-    module.get_prefix().set_value("with ");
+    module.get_prefix().set_value("");
 
     if let Some(symbol) = config.symbol {
         module.create_segment("symbol", &symbol);

@@ -19,7 +19,7 @@ pub fn module<'a>(context: &'a Context) -> Option<Module<'a>> {
     let is_py_project = context
         .try_begin_scan()?
         .set_files(&[
-            // "requirements.txt",
+            "requirements.txt",
             ".python-version",
             "pyproject.toml",
             "Pipfile",
@@ -40,11 +40,12 @@ pub fn module<'a>(context: &'a Context) -> Option<Module<'a>> {
     module.set_style(config.style);
     module.create_segment("symbol", &config.symbol);
 
+    // if config.pyenv_version_name {
+    //     let python_version = utils::exec_cmd("pyenv", &["version-name"])?.stdout;
+    //     module.create_segment("pyenv_prefix", &config.pyenv_prefix);
+    //     module.create_segment("version", &SegmentConfig::new(&python_version.trim()));
     if config.pyenv_version_name {
-        let python_version = utils::exec_cmd("pyenv", &["version-name"])?.stdout;
-        module.create_segment("pyenv_prefix", &config.pyenv_prefix);
-        module.create_segment("version", &SegmentConfig::new(&python_version.trim()));
-    } else {
+    // else {
         let python_version = get_python_version()?;
         let formatted_version = format_python_version(&python_version);
         module.create_segment("version", &SegmentConfig::new(&formatted_version));

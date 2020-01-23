@@ -20,6 +20,8 @@ mod line_break;
 mod memory_usage;
 mod nix_shell;
 mod nodejs;
+mod typescript;
+mod docker;
 mod package;
 mod php;
 mod python;
@@ -64,6 +66,8 @@ pub fn handle<'a>(module: &str, context: &'a Context) -> Option<Module<'a>> {
         "memory_usage" => memory_usage::module(context),
         "nix_shell" => nix_shell::module(context),
         "nodejs" => nodejs::module(context),
+        "typescript" => typescript::module(context),
+        "docker" => docker::module(context),
         "package" => package::module(context),
         "php" => php::module(context),
         "python" => python::module(context),

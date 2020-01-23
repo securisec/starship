@@ -31,6 +31,8 @@ pub const ALL_MODULES: &[&str] = &[
     "memory_usage",
     "nix_shell",
     "nodejs",
+    "typescript",
+    "docker",
     "package",
     "python",
     "ruby",
@@ -210,7 +212,7 @@ impl Affix {
         Self {
             _name: format!("{}_prefix", name),
             style: Style::default(),
-            value: "via ".to_string(),
+            value: "".to_string(),
         }
     }
 

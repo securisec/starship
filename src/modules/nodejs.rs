@@ -22,16 +22,21 @@ pub fn module<'a>(context: &'a Context) -> Option<Module<'a>> {
         return None;
     }
 
-    let node_version = utils::exec_cmd("node", &["--version"])?.stdout;
-
     let mut module = context.new_module("nodejs");
     let config: NodejsConfig = NodejsConfig::try_load(module.config);
-
+    
     module.set_style(config.style);
-
-    let formatted_version = node_version.trim();
     module.create_segment("symbol", &config.symbol);
-    module.create_segment("version", &SegmentConfig::new(formatted_version));
+    
+    if config.node_show_version {
+        let node_version = utils::exec_cmd("node", &["--version"])?.stdout;
+        let formatted_version = node_version.trim();
+        module.create_segment("version", &SegmentConfig::new(formatted_version));
+    } else {
+        let formatted_version = "";
+        module.create_segment("version", &SegmentConfig::new(formatted_version));
+        }
+
 
     Some(module)
 }
