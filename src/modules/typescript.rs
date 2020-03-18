@@ -10,6 +10,7 @@ pub fn module<'a>(context: &'a Context) -> Option<Module<'a>> {
     let is_js_project = context
         .try_begin_scan()?
         // .set_files(&["package.json"])
+        .set_files(&["tsconfig.json"])
         .set_extensions(&["ts"])
         // .set_folders(&["node_modules"])
         .is_match();
