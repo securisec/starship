@@ -1,7 +1,7 @@
 use super::{Context, Module, RootModuleConfig};
 
 use crate::configs::go::GoConfig;
-use crate::utils;
+// use crate::utils;
 
 /// Creates a module with the current Go version
 ///
@@ -31,37 +31,37 @@ pub fn module<'a>(context: &'a Context) -> Option<Module<'a>> {
     module.set_style(config.style);
     module.create_segment("symbol", &config.symbol);
 
-    let formatted_version =
-        format_go_version(&utils::exec_cmd("go", &["version"])?.stdout.as_str())?;
-    module.create_segment("version", &config.version.with_value(&formatted_version));
+    // let formatted_version =
+    //     format_go_version(&utils::exec_cmd("go", &["version"])?.stdout.as_str())?;
+    // module.create_segment("version", &config.version.with_value(&formatted_version));
 
     Some(module)
 }
 
-fn format_go_version(go_stdout: &str) -> Option<String> {
-    // go version output looks like this:
-    // go version go1.13.3 linux/amd64
+// fn format_go_version(go_stdout: &str) -> Option<String> {
+//     // go version output looks like this:
+//     // go version go1.13.3 linux/amd64
 
-    let version = go_stdout
-        // split into ["", "1.12.4 linux/amd64"]
-        .splitn(2, "go version go")
-        // return "1.12.4 linux/amd64"
-        .nth(1)?
-        // split into ["1.12.4", "linux/amd64"]
-        .split_whitespace()
-        // return "1.12.4"
-        .next()?;
+//     let version = go_stdout
+//         // split into ["", "1.12.4 linux/amd64"]
+//         .splitn(2, "go version go")
+//         // return "1.12.4 linux/amd64"
+//         .nth(1)?
+//         // split into ["1.12.4", "linux/amd64"]
+//         .split_whitespace()
+//         // return "1.12.4"
+//         .next()?;
 
-    Some(format!("v{}", version))
-}
+//     Some(format!("v{}", version))
+// }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+// #[cfg(test)]
+// mod tests {
+//     use super::*;
 
-    #[test]
-    fn test_format_go_version() {
-        let input = "go version go1.12 darwin/amd64";
-        assert_eq!(format_go_version(input), Some("v1.12".to_string()));
-    }
-}
+//     #[test]
+//     fn test_format_go_version() {
+//         let input = "go version go1.12 darwin/amd64";
+//         assert_eq!(format_go_version(input), Some("v1.12".to_string()));
+//     }
+// }
