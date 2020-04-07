@@ -29,6 +29,7 @@ pub mod terraform;
 pub mod time;
 pub mod username;
 pub mod typescript;
+pub mod firebase;
 pub mod docker;
 
 pub use starship_root::*;

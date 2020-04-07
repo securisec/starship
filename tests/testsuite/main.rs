@@ -20,6 +20,7 @@ mod modules;
 mod nix_shell;
 mod nodejs;
 mod typescript;
+mod firebase;
 mod docker;
 mod python;
 mod ruby;

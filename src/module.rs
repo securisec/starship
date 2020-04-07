@@ -32,6 +32,7 @@ pub const ALL_MODULES: &[&str] = &[
     "nix_shell",
     "nodejs",
     "typescript",
+    "firebase",
     "docker",
     "package",
     "python",
