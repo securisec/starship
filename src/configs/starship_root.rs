@@ -35,6 +35,7 @@ impl<'a> RootModuleConfig<'a> for StarshipRootConfig<'a> {
                 "nodejs",
                 "typescript",
                 "firebase",
+                "buildit",
                 "docker",
                 "php",
                 "python",

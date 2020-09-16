@@ -22,6 +22,7 @@ mod nix_shell;
 mod nodejs;
 mod typescript;
 mod firebase;
+mod buildit;
 mod docker;
 mod package;
 mod php;
@@ -69,6 +70,7 @@ pub fn handle<'a>(module: &str, context: &'a Context) -> Option<Module<'a>> {
         "nodejs" => nodejs::module(context),
         "typescript" => typescript::module(context),
         "firebase" => firebase::module(context),
+        "buildit" => buildit::module(context),
         "docker" => docker::module(context),
         "package" => package::module(context),
         "php" => php::module(context),

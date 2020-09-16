@@ -21,6 +21,7 @@ mod nix_shell;
 mod nodejs;
 mod typescript;
 mod firebase;
+mod buildit;
 mod docker;
 mod python;
 mod ruby;
