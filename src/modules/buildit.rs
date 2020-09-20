@@ -5,7 +5,7 @@ use crate::configs::buildit::BuilditConfig;
 pub fn module<'a>(context: &'a Context) -> Option<Module<'a>> {
     let is_js_project = context
         .try_begin_scan()?
-        .set_files(&[".build"])
+        .set_files(&[".buildit"])
         .is_match();
 
     if !is_js_project {
