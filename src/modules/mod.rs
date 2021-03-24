@@ -21,6 +21,7 @@ mod memory_usage;
 mod nix_shell;
 mod nodejs;
 mod typescript;
+mod showdebug;
 mod firebase;
 mod buildit;
 mod docker;
@@ -69,6 +70,7 @@ pub fn handle<'a>(module: &str, context: &'a Context) -> Option<Module<'a>> {
         "nix_shell" => nix_shell::module(context),
         "nodejs" => nodejs::module(context),
         "typescript" => typescript::module(context),
+        "showdebug" => showdebug::module(context),
         "firebase" => firebase::module(context),
         "buildit" => buildit::module(context),
         "docker" => docker::module(context),

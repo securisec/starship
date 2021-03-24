@@ -1,6 +1,6 @@
 use super::{Context, Module, RootModuleConfig};
 
-use crate::configs::typescript::TypescriptConfig;
+use crate::configs::firebase::FirebaseConfig;
 
 ///
 ///
@@ -21,7 +21,7 @@ pub fn module<'a>(context: &'a Context) -> Option<Module<'a>> {
     // let node_version = utils::exec_cmd("node", &["--version"])?.stdout;
 
     let mut module = context.new_module("firebase");
-    let config: TypescriptConfig = TypescriptConfig::try_load(module.config);
+    let config: FirebaseConfig = FirebaseConfig::try_load(module.config);
 
     module.set_style(config.style);
 
