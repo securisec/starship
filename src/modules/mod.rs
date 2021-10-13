@@ -34,6 +34,7 @@ mod terraform;
 mod time;
 mod username;
 mod utils;
+mod asciinema;
 
 #[cfg(feature = "battery")]
 mod battery;
@@ -71,6 +72,7 @@ pub fn handle<'a>(module: &str, context: &'a Context) -> Option<Module<'a>> {
         "nodejs" => nodejs::module(context),
         "typescript" => typescript::module(context),
         "showdebug" => showdebug::module(context),
+        "asciinema" => asciinema::module(context),
         "firebase" => firebase::module(context),
         "buildit" => buildit::module(context),
         "docker" => docker::module(context),

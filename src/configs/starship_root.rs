@@ -56,6 +56,7 @@ impl<'a> RootModuleConfig<'a> for StarshipRootConfig<'a> {
                 "battery",
                 "time",
                 "character",
+                "asciinema",
             ],
             scan_timeout: 30,
         }

@@ -44,6 +44,7 @@ pub const ALL_MODULES: &[&str] = &[
     "terraform",
     "time",
     "username",
+    "asciinema",
 ];
 
 /// A module is a collection of segments showing data for a single integration

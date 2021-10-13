@@ -33,5 +33,6 @@ pub mod showdebug;
 pub mod firebase;
 pub mod buildit;
 pub mod docker;
+pub mod asciinema;
 
 pub use starship_root::*;
