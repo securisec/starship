@@ -23,7 +23,7 @@ mod nodejs;
 mod typescript;
 mod showdebug;
 mod firebase;
-mod buildit;
+mod makefile;
 mod docker;
 mod package;
 mod php;
@@ -74,7 +74,7 @@ pub fn handle<'a>(module: &str, context: &'a Context) -> Option<Module<'a>> {
         "showdebug" => showdebug::module(context),
         "asciinema" => asciinema::module(context),
         "firebase" => firebase::module(context),
-        "buildit" => buildit::module(context),
+        "makefile" => makefile::module(context),
         "docker" => docker::module(context),
         "package" => package::module(context),
         "php" => php::module(context),

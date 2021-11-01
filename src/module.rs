@@ -34,7 +34,7 @@ pub const ALL_MODULES: &[&str] = &[
     "typescript",
     "showdebug",
     "firebase",
-    "buildit",
+    "makefile",
     "docker",
     "package",
     "python",

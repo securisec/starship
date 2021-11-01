@@ -4,15 +4,15 @@ use ansi_term::{Color, Style};
 use starship_module_config_derive::ModuleConfig;
 
 #[derive(Clone, ModuleConfig)]
-pub struct BuilditConfig<'a> {
+pub struct MakefileConfig<'a> {
     pub symbol: SegmentConfig<'a>,
     pub style: Style,
     pub disabled: bool,
 }
 
-impl<'a> RootModuleConfig<'a> for BuilditConfig<'a> {
+impl<'a> RootModuleConfig<'a> for MakefileConfig<'a> {
     fn new() -> Self {
-        BuilditConfig {
+        MakefileConfig {
             symbol: SegmentConfig::new(""),
             style: Color::Yellow.bold(),
             disabled: false,
