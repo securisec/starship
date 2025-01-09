@@ -22,6 +22,7 @@ mod nodejs;
 mod typescript;
 mod showdebug;
 mod firebase;
+mod ghidra;
 mod buildit;
 mod docker;
 mod python;

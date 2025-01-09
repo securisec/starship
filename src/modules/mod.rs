@@ -23,6 +23,7 @@ mod nodejs;
 mod typescript;
 mod showdebug;
 mod firebase;
+mod ghidra;
 mod makefile;
 mod docker;
 mod package;
@@ -74,6 +75,7 @@ pub fn handle<'a>(module: &str, context: &'a Context) -> Option<Module<'a>> {
         "showdebug" => showdebug::module(context),
         "asciinema" => asciinema::module(context),
         "firebase" => firebase::module(context),
+        "ghidra" => ghidra::module(context),
         "makefile" => makefile::module(context),
         "docker" => docker::module(context),
         "package" => package::module(context),
