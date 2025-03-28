@@ -23,6 +23,7 @@ mod typescript;
 mod showdebug;
 mod firebase;
 mod ghidra;
+mod mise;
 mod buildit;
 mod docker;
 mod python;

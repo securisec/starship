@@ -35,6 +35,7 @@ pub const ALL_MODULES: &[&str] = &[
     "showdebug",
     "firebase",
     "ghidra",
+    "mise",
     "makefile",
     "docker",
     "package",
