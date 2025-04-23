@@ -1,3 +1,4 @@
+use std::env;
 use chrono::{DateTime, FixedOffset, Local, Utc};
 
 use super::{Context, Module};
@@ -11,7 +12,8 @@ pub fn module<'a>(context: &'a Context) -> Option<Module<'a>> {
 
     let mut module = context.new_module("time");
     let config: TimeConfig = TimeConfig::try_load(module.config);
-    if config.disabled {
+    let is_being_recorded: bool = env::var("ASCIINEMA_REC").is_ok();
+    if config.disabled && !is_being_recorded {
         return None;
     };
 
