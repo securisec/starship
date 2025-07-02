@@ -24,6 +24,7 @@ mod showdebug;
 mod firebase;
 mod ghidra;
 mod mise;
+mod obsidian;
 mod buildit;
 mod docker;
 mod python;

@@ -33,6 +33,7 @@ pub mod showdebug;
 pub mod firebase;
 pub mod ghidra;
 pub mod mise;
+pub mod obsidian;
 pub mod makefile;
 pub mod docker;
 pub mod asciinema;

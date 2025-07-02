@@ -25,6 +25,7 @@ mod showdebug;
 mod firebase;
 mod ghidra;
 mod mise;
+mod obsidian;
 mod makefile;
 mod docker;
 mod package;
@@ -78,6 +79,7 @@ pub fn handle<'a>(module: &str, context: &'a Context) -> Option<Module<'a>> {
         "firebase" => firebase::module(context),
         "ghidra" => ghidra::module(context),
         "mise" => mise::module(context),
+        "obsidian" => obsidian::module(context),
         "makefile" => makefile::module(context),
         "docker" => docker::module(context),
         "package" => package::module(context),

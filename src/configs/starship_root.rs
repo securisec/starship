@@ -38,6 +38,7 @@ impl<'a> RootModuleConfig<'a> for StarshipRootConfig<'a> {
                 "firebase",
                 "ghidra",
                 "mise",
+                "obsidian",
                 "makefile",
                 "docker",
                 "php",
